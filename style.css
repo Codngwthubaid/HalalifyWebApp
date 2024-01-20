@@ -71,6 +71,7 @@ body {
     text-decoration: none;
 }
 
+
 .nav svg {
     width: 17px;
 
@@ -89,6 +90,8 @@ body {
     width: 80vw;
     margin: 10px 10px 10px 0px;
 }
+
+
 
 .spotifyPlaylist {
     padding: 16px;
