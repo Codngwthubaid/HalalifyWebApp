@@ -4,6 +4,10 @@
  
 }
 
+.wrap{
+    flex-wrap: wrap;
+}
+
 .flex{
     display: flex;
 }
@@ -41,3 +45,8 @@
 .p-1{
 padding: 5px;
 }
+
+.p-2{
+    padding: 5px 25px;
+}
+
