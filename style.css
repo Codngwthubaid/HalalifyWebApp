@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+
+
+.left {
+    width: 20vw;
+    padding: 10px;
+}
+
+.right {
+    width: 80vw;
+}
+
+
+
+.home ul li {
+    width: 20px;
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    padding-top: 14px;
+    font-weight: bold;
+}
+
+.logo {
+    cursor: pointer;
+}
+
+.libaray {
+    margin-top: 10px;
+}
+
+.heading {
+    display: flex;
+    gap: 15px;
+    padding-top: 14px;
+    font-weight: bold;
+    padding: 15px 15px 20px 10px;
+    font-size: 13px;
+}
+
+.heading img {
+    width: 25px;
+}
+
+.libaray {
+    min-height: 80vh;
+    position: relative;
+}
+
+.footer {
+    display: flex;
+    font-size: 13px;
+    flex-wrap: wrap;
+    gap: 13px;
+    position: absolute;
+    bottom: 0;
+}
+
+.footer a {
+    color: gray;
+    text-decoration: none;
+}
+
+.nav svg{
+    width: 20px;
+}
