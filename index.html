@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spotify</title>
+    <title>Spotify - Web Player: Music for everyone</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="Utility.css">
 
@@ -25,7 +25,25 @@
                 <div class="libaray bg-gray rounded p-1 m-1">
                     <div class="heading align-item">
                         <img src="libaray.svg" alt="libaray">
+
                         <h3>Your Library</h3>
+                    </div>
+                    <div class="songs">
+                        <ul>
+                            <li>
+                                <div class="music-img">
+                                    <img src="music.svg" alt="">
+                                </div>
+                                <div class="info">
+                                    <div>Song Name</div>
+                                    <div>Artist Name</div>
+                                </div>
+                                <div>PLay Now</div>
+                                <div> <img src="play.svg" alt="play-Img"> </div>
+                            </li>
+                        </ul>
+
+
                     </div>
 
                     <div class="footer">
@@ -46,7 +64,7 @@
 
             <div class="right bg-gray rounded">
                 <div class="header flex ">
-                    <div class="nav flex">
+                    <div class="nav flex align-item">
                         <div>
 
                             <svg data-encore-id="icon" fill="gray" role="img" aria-hidden="true"
@@ -67,8 +85,8 @@
                         </div>
                     </div>
                     <div class="buttons">
-                        <button>Sign In</button>
-                        <button>Log In</button>
+                        <button class="signInBtn">Sign In</button>
+                        <button class="logInBtn">Log In</button>
                     </div>
                 </div>
 
@@ -102,51 +120,35 @@
                             <h3>Dinner with Friends</h3>
                             <p>The perfect soundtrack to those long nights over dinner</p>
                         </div>
-                        <div class="cards">
-                            <div class="playButton flex justify-content on-off">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="35" viewBox="0 0 24 24"
-                                    id="play">
-                                    <path
-                                        d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18c.62-.39.62-1.29 0-1.69L9.54 5.98C8.87 5.55 8 6.03 8 6.82z">
-                                    </path>
-                                </svg>
-                            </div>
-                            <img src="https://i.scdn.co/image/ab67706f000000026e515187c071e45918e9f0de" alt="">
-                            <h3>Dinner with Friends</h3>
-                            <p>The perfect soundtrack to those long nights over dinner</p>
-                        </div>
-                        <div class="cards">
-                            <div class="playButton flex justify-content on-off">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="35" viewBox="0 0 24 24"
-                                    id="play">
-                                    <path
-                                        d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18c.62-.39.62-1.29 0-1.69L9.54 5.98C8.87 5.55 8 6.03 8 6.82z">
-                                    </path>
-                                </svg>
-                            </div>
-                            <img src="https://i.scdn.co/image/ab67706f000000026e515187c071e45918e9f0de" alt="">
-                            <h3>Dinner with Friends</h3>
-                            <p>The perfect soundtrack to those long nights over dinner</p>
-                        </div>
-                        <div class="cards">
-                            <div class="playButton flex justify-content on-off">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="35" viewBox="0 0 24 24"
-                                    id="play">
-                                    <path
-                                        d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18c.62-.39.62-1.29 0-1.69L9.54 5.98C8.87 5.55 8 6.03 8 6.82z">
-                                    </path>
-                                </svg>
-                            </div>
-                            <img src="https://i.scdn.co/image/ab67706f000000026e515187c071e45918e9f0de" alt="">
-                            <h3>Dinner with Friends</h3>
-                            <p>The perfect soundtrack to those long nights over dinner</p>
-                        </div>
+                    </div>
 
+                    <div class="playBar">
+                        <div class="songsBtn">
+                            <div class="songInfo">
+
+                            </div>
+                            <div class="previousPlay">
+                                <img src="previousplay.svg" alt="previousPlayBtn">
+                            </div>
+                            <div class="play">
+                                <img src="play.svg" alt="playBtn">
+                            </div>
+                            <div class="nextPlay">
+                                <img src="nextplay.svg" alt="nextPlayBtn">
+                            </div>
+                            <div class="songTime">
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
+    <script src="script.js"></script>
+
+
+
 </body>
 
 </html>

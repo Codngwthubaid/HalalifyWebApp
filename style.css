@@ -16,7 +16,7 @@ body {
 
 
 .left {
-    width: 20vw;
+    width: 22.5vw;
     margin: 6px;
 }
 
@@ -26,6 +26,7 @@ body {
     display: flex;
     list-style: none;
     gap: 10px;
+    cursor: pointer;
     padding-top: 14px;
     font-weight: bold;
 }
@@ -79,16 +80,19 @@ body {
 
 .header {
     justify-content: space-between;
-    background-color: #2e2e2e;
+    background-color: #101010;
+    height: 72px;
 }
 
 .header>* {
-    padding: 20px 40px;
+    padding: 14px 40px;
+
 }
 
 .right {
-    width: 80vw;
+    width: 77.5vw;
     margin: 10px 10px 10px 0px;
+    position: relative;
 }
 
 
@@ -123,6 +127,8 @@ body {
 .cardContainer {
     gap: 15px;
     margin: 10px 0px;
+    overflow-y: scroll;
+    height: auto;
 }
 
 .playButton {
@@ -132,16 +138,17 @@ body {
     border-radius: 50%;
     align-items: flex-start;
     position: absolute;
-    top: 200px;
+    top: 133px;
     right: 20px;
     opacity: 0;
     transition: all 1s ease-in-out;
 }
 
+/* 
 .playButton:hover {
     opacity: 1;
     top: 133px;
-}
+} */
 
 
 .playButton>p {
@@ -151,4 +158,97 @@ body {
 .cards>p {
     font-size: 14px;
     color: rgb(161, 159, 159);
+}
+
+/* For black scroll bar */
+::-webkit-scrollbar {
+    width: 10px;
+
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #181818;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #2e2e2e;
+}
+
+.buttons>* {
+    padding: 0px 20px;
+}
+
+
+.nav {
+    column-gap: 20px;
+}
+
+.signInBtn {
+    color: gray;
+    background-color: #101010;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    font-size: 16px;
+}
+
+
+
+.signInBtn:hover {
+    font-size: 17px;
+    cursor: pointer;
+    color: white;
+}
+
+.logInBtn {
+    padding: 12px 1px;
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    width: 99px;
+    font-weight: bold;
+    border-radius: 30px;
+    border: 1px solid white;
+}
+
+.logInBtn:hover {
+    width: 100px;
+    font-size: 17px;
+    cursor: pointer;
+
+}
+
+.playBar {
+    position: absolute;
+    bottom: 0;
+    background-color: red;
+    width: 97.1%;
+    padding: 10px 0px;
+}
+
+.songsBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 15px;
+}
+
+
+.songs ul {
+    padding: 0px 15px;
+    list-style: none;
+}
+
+.songs ul li {
+    /* list-style-type: decimal; */
+    display: flex;
+    column-gap: 20px;
+    cursor: pointer;
+    padding: 10px 0px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.songs ul li > *{
+    font-size: 12px;
 }
