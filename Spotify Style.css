@@ -16,7 +16,7 @@ body {
 
 
 .left {
-    width: 22.5vw;
+    width: 25vw;
     margin: 6px;
 }
 
@@ -58,10 +58,11 @@ body {
 }
 
 .footer {
-    display: flex;
+    /* display: flex; */
     font-size: 13px;
     flex-wrap: wrap;
     gap: 13px;
+    width: 100%;
     position: absolute;
     bottom: 0;
     padding: 20px 0px;
@@ -90,7 +91,7 @@ body {
 }
 
 .right {
-    width: 77.5vw;
+    width: 75vw;
     margin: 10px 10px 10px 0px;
     position: relative;
 }
@@ -221,7 +222,7 @@ body {
 .playBar {
     position: absolute;
     bottom: 0;
-    background-color: red;
+    background-color: white;
     width: 97.1%;
     padding: 10px 0px;
 }
@@ -235,20 +236,41 @@ body {
 
 
 .songs ul {
-    padding: 0px 15px;
+    padding: 0px 0px 0px 8px;
     list-style: none;
+
+
 }
 
 .songs ul li {
-    /* list-style-type: decimal; */
+    list-style-type: decimal;
     display: flex;
-    column-gap: 20px;
+    gap: 10px;
     cursor: pointer;
-    padding: 10px 0px;
-    justify-content: flex-start;
+    padding: 12px 0px;
+    margin: 10px 0px;
+    width: 290px;
+    border-radius: 5px;
+    border: 1px solid white;
+    justify-content: center;
     align-items: center;
 }
 
 .songs ul li > *{
     font-size: 12px;
+}
+
+.playNow{
+    column-gap: 5px;
+}
+
+.info{
+    flex-direction: column;
+    width: 100px;
+}
+
+.songs{
+    height: 55vh;
+    /* border: 1px solid red; */
+    overflow-y: scroll;
 }
