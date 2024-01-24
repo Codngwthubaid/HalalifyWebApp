@@ -1,5 +1,6 @@
 console.log('Ready');
 
+let currentSong = new Audio;   //global variable for music 
 async function getSongs() {
     let localAPI = await fetch("http://127.0.0.1:3000/Songs/")
     let response = await localAPI.text()
@@ -18,15 +19,16 @@ async function getSongs() {
     return songs
 }
 
-// play the music when the user on the icon 
+// play the music when the user on the icon
 const playmusic = (track) => {
-    let audio = new Audio("/songs/" + track)
-    audio.play()
+    // let audio = new Audio("/songs/" + track)
+    currentSong.src = "/songs/" + track
+    currentSong.play()
+    Play.src = "paused.svg"
 }
 
 
 async function main() {
-    let currentSong;
     // Get list of all the songs
     let songs = await getSongs()
     // console.log(songs);
@@ -41,7 +43,7 @@ async function main() {
                                                 </div>
                                                 <div class="playNow flex justify-content align-item">
                                                 <span>PLay Now</span>
-                                                <img src="libarayPlay.svg" alt="play-Img"></div>
+                                                <img id="Play src="play.svg" alt="play-Img"></div>
                                                 </li>`
     }
 
@@ -56,7 +58,21 @@ async function main() {
     })
 
 
+    // Attach an event lostener for play the music previous the music and get next music
+    // pasued the music and play the music
+    Play.addEventListener("click", ()=>{
+        if(currentSong.paused){
+            currentSong.play()
+            Play.svg = "paused.svg"
+        }
+        else{
+            currentSong.pause()
+            Play.svg = "play.svg"
 
+        }
+    })
+
+   
 }
 
 main()

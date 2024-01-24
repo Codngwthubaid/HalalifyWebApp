@@ -305,6 +305,7 @@ body {
 .nextPlay {
     position: relative;
     bottom: 18px;
+    cursor: pointer;
 
 }
 
