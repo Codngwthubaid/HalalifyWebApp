@@ -18,10 +18,20 @@ async function getSongs() {
     return songs
 }
 
-async function main() {
-    let songs = await getSongs()
-    console.log(songs);
+// play the music when the user on the icon 
+const playmusic = (track) => {
+    let audio = new Audio("/songs/" + track)
+    audio.play()
+}
 
+
+async function main() {
+    let currentSong;
+    // Get list of all the songs
+    let songs = await getSongs()
+    // console.log(songs);
+
+    // Get all the songs in the playlist
     let songsUL = document.querySelector(".songs").getElementsByTagName("ul")[0]
     for (const song of songs) {
         songsUL.innerHTML = songsUL.innerHTML + `<li><img src="music.svg" alt="">
@@ -31,20 +41,22 @@ async function main() {
                                                 </div>
                                                 <div class="playNow flex justify-content align-item">
                                                 <span>PLay Now</span>
-                                                <img src="play.svg" alt="play-Img"></div>
+                                                <img src="libarayPlay.svg" alt="play-Img"></div>
                                                 </li>`
     }
 
-    var audio = new Audio(songs[0]);
-    // audio.play();
+    // Attact an eventlistner to each song
+    Array.from(document.querySelector(".songs").getElementsByTagName("li")).forEach((e) => {
+        e.addEventListener("click", element => {
+            console.log(e.querySelector(".info").firstElementChild.innerHTML);
+            playmusic(e.querySelector(".info").firstElementChild.innerHTML)
+
+        })
+
+    })
 
 
-    audio.addEventListener("loadeddata", () => {
-        let duration = audio.duration;
-        console.log(audio.duration, audio.currentTime, audio.currentSrc);
 
-        // The duration variable now holds the duration (in seconds) of the audio clip
-    });
 }
 
 main()
