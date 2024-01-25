@@ -34,9 +34,9 @@ async function getSongs() {
 }
 
 // play the music when the user on the icon
-const playmusic = (track , pause = false) => {
+const playmusic = (track, pause = false) => {
     currentSong.src = "/songs/" + track
-    if(!pause){
+    if (!pause) {
         currentSong.play()
         Play.src = "Svg's/paused.svg"
     }
@@ -95,8 +95,18 @@ async function main() {
         console.log(currentSong.currentTime, currentSong.duration);
         document.querySelector(".songTime").innerHTML =
             `${SecondsToMinuteSeconds(currentSong.currentTime)} / ${SecondsToMinuteSeconds(currentSong.duration)}`
-
+        document.querySelector(".circle").style.left = ((currentSong.currentTime / currentSong.duration) * 100 + "%")
     })
+
+    // Add eventlisten to seekbar
+    document.querySelector(".seekbar").addEventListener("click", ((e) => {
+        let percent = (e.offsetX / e.target.getBoundingClientRect().width) * 100 
+        document.querySelector(".circle").style.left = percent + "%"
+        currentSong.currentTime = (currentSong.duration * percent) / 100
+    }))
+
+
+
 
 }
 

@@ -282,22 +282,22 @@ body {
 .seekbar {
     width: 96.70%;
     border-radius: 6px;
-    height: 2.5px;
+    height: 4.5px;
     background-color: #181818;
     position: absolute;
     bottom: 5px;
+    cursor: pointer;
     margin: 5px 10px 0px 10px;
 }
 
 .circle {
     position: relative;
     top: 26.5px;
-    left: 10px;
     width: 12.5px;
     height: 12.5px;
     border-radius: 15px;
     background-color: #181818;
-    transition: left 0.5s;
+    transition: left 1s;
 }
 
 .previousPlay,
@@ -315,7 +315,8 @@ body {
     width: 23px;
 }
 
-.songInfo , .songTime{
+.songInfo,
+.songTime {
     margin: 0px 17px;
     position: relative;
     bottom: 18px;
@@ -325,6 +326,12 @@ body {
 .flex-songInfo-and-songTime {
     display: flex;
     justify-content: space-between;
-    align-items: center; 
+    align-items: center;
     color: #101010;
+}
+
+@media screen and (min-width: 50px) and (max-width: 1199px) {
+    .left{
+      border: 10px solid red;
+    }
 }
