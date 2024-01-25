@@ -34,11 +34,13 @@ async function getSongs() {
 }
 
 // play the music when the user on the icon
-const playmusic = (track) => {
+const playmusic = (track , pause = false) => {
     currentSong.src = "/songs/" + track
-    currentSong.play()
-    Play.src = "Svg's/paused.svg"
-    document.querySelector(".songInfo").innerHTML = track
+    if(!pause){
+        currentSong.play()
+        Play.src = "Svg's/paused.svg"
+    }
+    document.querySelector(".songInfo").innerHTML = decodeURI(track)
     document.querySelector(".songTime").innerHTML = "00:00 / 00:00"
 
 
@@ -49,7 +51,7 @@ const playmusic = (track) => {
 async function main() {
     // Get list of all the songs
     let songs = await getSongs()
-    // console.log(songs);
+    playmusic(songs[0], true)
 
     // Get all the songs in the playlist
     let songsUL = document.querySelector(".songs").getElementsByTagName("ul")[0]
@@ -91,8 +93,8 @@ async function main() {
     //Listen for time update event
     currentSong.addEventListener("timeupdate", () => {
         console.log(currentSong.currentTime, currentSong.duration);
-        document.querySelector(".songTime").innerHTML = 
-        `${SecondsToMinuteSeconds(currentSong.currentTime)}:${SecondsToMinuteSeconds(currentSong.duration)}`
+        document.querySelector(".songTime").innerHTML =
+            `${SecondsToMinuteSeconds(currentSong.currentTime)} / ${SecondsToMinuteSeconds(currentSong.duration)}`
 
     })
 
