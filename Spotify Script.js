@@ -26,7 +26,7 @@ async function getSongs() {
 
     for (let index = 0; index < links.length; index++) {
         const element = links[index];
-        if (element.href.endsWith(".mpeg")) {
+        if (element.href.endsWith(".mp3" || ".m4a")) {
             songs.push(element.href.split("/Songs/")[1])
         }
     }
