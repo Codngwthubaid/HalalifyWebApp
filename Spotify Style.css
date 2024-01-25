@@ -314,3 +314,17 @@ body {
 .nextPlay img {
     width: 23px;
 }
+
+.songInfo , .songTime{
+    margin: 0px 17px;
+    position: relative;
+    bottom: 18px;
+    font-weight: 500;
+}
+
+.flex-songInfo-and-songTime {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    color: #101010;
+}
