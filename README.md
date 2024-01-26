@@ -1,5 +1,4 @@
-# Spotify-Clone
-The repository describes about the Spotify Clone Project code. 
+# Halalify Web App
+The repository describes about the Project Halalify Web App code. 
 
 
-hugricons
