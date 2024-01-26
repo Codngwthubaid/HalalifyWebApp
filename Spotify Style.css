@@ -13,6 +13,15 @@ body {
     color: white;
 }
 
+.logo{
+    column-gap: 10px;
+
+}
+
+.logo span{
+    font-weight: bolder;
+    font-size: larger;
+}
 
 
 .left {
@@ -330,8 +339,8 @@ body {
     color: #101010;
 }
 
-@media screen and (min-width: 50px) and (max-width: 1199px) {
+/* @media screen and (min-width: 50px) and (max-width: 1199px) {
     .left{
       border: 10px solid red;
     }
-}
+} */
