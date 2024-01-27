@@ -100,11 +100,20 @@ async function main() {
 
     // Add eventlisten to seekbar
     document.querySelector(".seekbar").addEventListener("click", ((e) => {
-        let percent = (e.offsetX / e.target.getBoundingClientRect().width) * 100 
+        let percent = (e.offsetX / e.target.getBoundingClientRect().width) * 100
         document.querySelector(".circle").style.left = percent + "%"
         currentSong.currentTime = (currentSong.duration * percent) / 100
     }))
 
+    // Add an eventlisterner for hambureger -
+    document.querySelector(".hamburger").addEventListener("click", () => {
+        document.querySelector(".left").style.left = "0";
+    })
+
+    // Add an eventlistener for back-Btn -
+    document.querySelector(".back-Btn").addEventListener("click", () => {
+        document.querySelector(".left").style.left = "-100%"
+    })
 
 
 
