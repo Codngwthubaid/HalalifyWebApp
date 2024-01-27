@@ -13,12 +13,12 @@ body {
     color: white;
 }
 
-.logo{
+.logo {
     column-gap: 10px;
 
 }
 
-.logo span{
+.logo span {
     font-weight: bolder;
     font-size: larger;
 }
@@ -106,6 +106,9 @@ body {
     position: relative;
 }
 
+.hamburger {
+    display: none;
+}
 
 
 .spotifyPlaylist {
@@ -230,12 +233,13 @@ body {
 }
 
 .playBar {
-    position: absolute;
+    position: fixed;
     bottom: 0;
+    margin-bottom: 10px;
     /* background-color: #dbdbdb; */
     /* background-color: #999393; */
     background-color: white;
-    width: 97.1%;
+    width: 70%;
     height: 30px;
     border-radius: 10px;
     padding: 10px 5px;
@@ -339,8 +343,26 @@ body {
     color: #101010;
 }
 
-/* @media screen and (min-width: 50px) and (max-width: 1199px) {
-    .left{
-      border: 10px solid red;
+@media screen and (min-width: 50px) and (max-width: 1199px) {
+    .left {
+        border: 10px solid red;
+        position: absolute;
+        left: -100%;
+        transition: ease-in-out 1s;
+        z-index: 1;
+        width: 200px;
     }
-} */
+
+    .right {
+        width: 100vw;
+    }
+
+    .playBar {
+        width: 96%;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+}
