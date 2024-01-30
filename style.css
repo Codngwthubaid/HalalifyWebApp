@@ -4,6 +4,10 @@
     
 }
 
+:root{
+    --opacity : 0;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -122,6 +126,15 @@ body {
     padding: 10px;
     border-radius: 8px;
     background-color: #181818;
+    position: relative;
+    transition: all .6s;
+
+}
+
+.cards:hover{
+    cursor: pointer;
+    background-color: #2e2e2e;
+    --opacity: 1;
 }
 
 .cards img {
@@ -155,8 +168,8 @@ body {
     position: absolute;
     top: 133px;
     right: 20px;
-    opacity: 0;
-    transition: all 1s ease-in-out;
+    opacity: var(--opacity);
+    transition: all .6s ease-in-out;
 }
 
 /* 

@@ -1,6 +1,7 @@
 console.log('Ready');
 let currentSong = new Audio;   //global variable for music 
 let songs;
+let currFolder;
 
 function SecondsToMinuteSeconds(seconds) {
     if (isNaN(seconds) || seconds < 0) {
@@ -16,19 +17,26 @@ function SecondsToMinuteSeconds(seconds) {
     }
 }
 
-async function getSongs() {
-    let localAPI = await fetch("http://127.0.0.1:3000/Songs/")
+async function getSongs(Folder) {
+    currFolder = Folder;
+    let localAPI = await fetch(`http://127.0.0.1:3000/${Folder}/`)
     let response = await localAPI.text()
     let div = document.createElement("div")
     div.innerHTML = response
+
+// async function getSongs(Folder) {
+//     currFolder = Folder;
+//     let localAPI = await fetch(`http://127.0.0.1:3000/${Folder}/`);
+//     let response = await localAPI.text();
+//     console.log(response); 
 
     let links = div.getElementsByTagName("a")
     let songs = []
 
     for (let index = 0; index < links.length; index++) {
         const element = links[index];
-        if (element.href.endsWith(".mp3" || ".m4a")) {
-            songs.push(element.href.split("/Songs/")[1])
+        if (element.href.endsWith(".mp3")) {
+            songs.push(element.href.split(`/${Folder}/`)[1])
         }
     }
     return songs
@@ -36,13 +44,13 @@ async function getSongs() {
 
 // play the music when the user on the icon
 const playmusic = (track, pause = false) => {
-    currentSong.src = "/songs/" + track
+    currentSong.src = `/${currFolder}/` + track
     if (!pause) {
         currentSong.play()
         Play.src = "Svg's/paused.svg"
     }
     document.querySelector(".songInfo").innerHTML = decodeURI(track)
-    document.querySelector(".songTime").innerHTML = "00:00 / 00:00"
+    document.querySelector(".songTime").innerHTML = "00:00/00:00"
 
 
 }
@@ -51,12 +59,12 @@ const playmusic = (track, pause = false) => {
 
 async function main() {
     // Get list of all the songs
-    songs = await getSongs()
-    playmusic(songs[0], true)
+    songs = await getSongs("songs/QR - Surah's");
+    playmusic(songs[0], true);
 
     // Get all the songs in the playlist
     let songsUL = document.querySelector(".songs").getElementsByTagName("ul")[0]
-    for (const song of songs) {
+    for (const song of currFolder) {
         songsUL.innerHTML = songsUL.innerHTML + `<li><img src="Svg's/music.svg" alt="">
                                                 <div class="info flex">
                                                    <div>${song.replaceAll("%20", " ")}</div>
