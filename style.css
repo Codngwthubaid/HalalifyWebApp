@@ -63,7 +63,7 @@ body {
 }
 
 .libaray {
-    min-height: calc(100vh - 23vh);
+    min-height: 81vh;
     position: relative;
 }
 
@@ -241,7 +241,7 @@ body {
     background-color: white;
     width: 70%;
     /* height: 30px; */
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 20px 0px 0px 0px;
 }
 
@@ -372,7 +372,7 @@ body {
         margin: 0px 10px;
         position: relative;
         bottom: 10px;
-        font-size: 12px;
+        font-size: medium;
         font-weight: 500;
     }
 
@@ -484,7 +484,7 @@ body {
         margin: 0px 10px;
         position: relative;
         bottom: 10px;
-        font-size: 12px;
+        font-size: medium;
         font-weight: 500;
     }
 
@@ -493,12 +493,12 @@ body {
     }
 
     .playBar {
-        width: calc(100vw - 35px);
+      width: 88vw;
     }
 
     .seekbar {
-        /* width: 87vw; */
-        width: calc(100vw - 60px);
+      
+        width: 85vw;
     }
 
     .hamburger {
@@ -541,7 +541,7 @@ body {
     }
 
     .spotifyPlaylist .cards {
-        width: 25.9vw;
+        width: 40vw;
     }
 
     .cardContainer {
@@ -551,7 +551,7 @@ body {
     }
 
     .circle {
-        bottom: 11.4px;
+        bottom: 2.4px;
     }
 
     .flex-songInfo-and-songTime {
@@ -596,7 +596,7 @@ body {
         margin: 0px 10px;
         position: relative;
         bottom: 10px;
-        font-size: 12px;
+        font-size: large;
         font-weight: 500;
     }
 
@@ -605,12 +605,11 @@ body {
     }
 
     .playBar {
-        width: calc(100vw - 35px);
+        width: 94vw;
     }
 
     .seekbar {
-        /* width: 87vw; */
-        width: calc(100vw - 60px);
+     width: 91vw;
     }
 
     .hamburger {
@@ -641,7 +640,7 @@ body {
     .previousPlay img,
     .play img,
     .nextPlay img {
-        width: 20px;
+        width: 23px;
     }
 
     .header>* {
@@ -653,7 +652,7 @@ body {
     }
 
     .spotifyPlaylist .cards {
-        width: 25.9vw;
+        width: 27.9vw;
     }
 
     .cardContainer {
@@ -663,7 +662,7 @@ body {
     }
 
     .circle {
-        bottom: 11.4px;
+        bottom: 2.4px;
     }
 
     .flex-songInfo-and-songTime {
