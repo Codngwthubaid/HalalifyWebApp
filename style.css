@@ -63,7 +63,7 @@ body {
 }
 
 .libaray {
-    min-height: 81vh;
+    min-height: 84vh;
     position: relative;
 }
 
@@ -330,6 +330,11 @@ body {
 .play img,
 .nextPlay img {
     width: 23px;
+}
+
+.songInfo{
+
+    width: 230px;
 }
 
 .songInfo,
@@ -674,7 +679,7 @@ body {
         /* row-gap: 2px; */
     }
 
-
+    
 }
 
 
