@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
+@media screen and (min-width: 1200px) {
+    
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -26,10 +30,7 @@ body {
     width: 25vw;
     margin: 0px 6px;
 }
-/* 
-.back-Btn {
-    display: hidden;
-} */
+
 
 .home ul li {
     width: 20px;
@@ -332,7 +333,7 @@ body {
     width: 23px;
 }
 
-.songInfo{
+.songInfo {
 
     width: 230px;
 }
@@ -352,11 +353,16 @@ body {
     align-items: center;
     color: #101010;
 }
-
-.left>#back-Btn {
-    display: none;
-}
-
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
 @media screen and (max-width: 549px) {
     .left {
         background-color: black;
@@ -365,8 +371,12 @@ body {
         width: 98vw;
         transition: ease-in-out 0.2s;
         z-index: 1;
-    
+
     }
+
+.libaray{
+    min-height: 76.5vh;
+}
 
     .songInfo {
         font-size: 15px;
@@ -449,14 +459,15 @@ body {
         align-items: center;
         flex-direction: column;
         color: #101010;
-        row-gap: 2px;
+        row-gap: 5px;
     }
 
-.circle{
-    bottom:1.4px;
-}
+    .circle {
+        bottom: 1.4px;
+    }
 
 }
+
 /*  */
 /*  */
 /*  */
@@ -477,7 +488,7 @@ body {
         width: 38vw;
         transition: ease-in-out 0.2s;
         z-index: 1;
-    
+
     }
 
     .songInfo {
@@ -498,11 +509,11 @@ body {
     }
 
     .playBar {
-      width: 88vw;
+        width: 88vw;
     }
 
     .seekbar {
-      
+
         width: 85vw;
     }
 
@@ -570,6 +581,7 @@ body {
 
 
 }
+
 /*  */
 /*  */
 /*  */
@@ -589,7 +601,7 @@ body {
         width: 38vw;
         transition: ease-in-out 0.2s;
         z-index: 1;
-    
+
     }
 
     .songInfo {
@@ -614,7 +626,7 @@ body {
     }
 
     .seekbar {
-     width: 91vw;
+        width: 91vw;
     }
 
     .hamburger {
@@ -674,13 +686,32 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        /* flex-direction: column; */
         color: #101010;
-        /* row-gap: 2px; */
     }
 
-    
 }
 
+.volumne-time-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.volumne-time-flex div:last-child > img{
 
+    position: relative;
+    bottom: 15px;
+    padding: 0px 10px 0px 0px;
+}
+
+.rangeVolume{
+    flex-direction: row;
+}
+
+.rangeVolume div> input{
+    cursor: pointer;
+    width: 80px;
+    position: relative;
+    bottom: 13px;
+    color: orange;
+}
