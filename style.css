@@ -63,7 +63,7 @@ body {
 }
 
 .libaray {
-    min-height: 79vh;
+    min-height: 75vh;
     position: relative;
 }
 
@@ -235,14 +235,14 @@ body {
 .playBar {
     position: fixed;
     bottom: 0;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     /* background-color: #dbdbdb; */
     /* background-color: #999393; */
     background-color: white;
     width: 70%;
     height: 30px;
     border-radius: 10px;
-    padding: 10px 5px;
+    padding: 20px 0px 0px 0px;
 }
 
 .songsBtn {
@@ -337,6 +337,7 @@ body {
     position: relative;
     bottom: 18px;
     font-weight: 500;
+
 }
 
 .flex-songInfo-and-songTime {
@@ -351,9 +352,23 @@ body {
         background-color: black;
         position: absolute;
         left: -120%;
+        width: 98vw;
         transition: ease-in-out 0.2s;
         z-index: 1;
-        width: 390px;
+        /* width: 390px; */
+    }
+
+    .songInfo {
+        font-size: 15px;
+    }
+
+    .songInfo,
+    .songTime {
+        margin: 0px 10px;
+        position: relative;
+        bottom: 10px;
+        font-size: 12px;
+        font-weight: 500;
     }
 
     .right {
@@ -361,7 +376,11 @@ body {
     }
 
     .playBar {
-        width: 96%;
+        width: 93vw;
+    }
+
+    .seekbar {
+        width: 87vw;
     }
 
     .hamburger {
@@ -369,11 +388,34 @@ body {
         display: block;
     }
 
-    .back-Btn {
+    .left>#back-Btn {
         position: absolute;
+        top: 14px;
         right: 20px;
-        top: 13px;
         cursor: pointer;
     }
 
+    .previousPlay,
+    .play,
+    .nextPlay {
+        position: relative;
+        bottom: 9px;
+        cursor: pointer;
+    
+    }
+    
+
+    .previousPlay img,
+    .play img,
+    .nextPlay img {
+        width: 20px;
+    }
+
+    .header>* {
+        padding: 14px 10px;
+    }
+
+    .songs ul li {
+        width: 70vw;
+    }
 }

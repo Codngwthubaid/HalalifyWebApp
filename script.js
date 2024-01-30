@@ -111,7 +111,7 @@ async function main() {
     })
 
     // Add an eventlistener for back-Btn -
-    document.querySelector(".back-Btn").addEventListener("click", () => {
+    document.querySelector("#back-Btn").addEventListener("click", () => {
         document.querySelector(".left").style.left = "-120%"
     })
 
