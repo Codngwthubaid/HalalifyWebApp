@@ -12,7 +12,6 @@ function SecondsToMinuteSeconds(seconds) {
         let Seconds = Math.floor(seconds % 60)
         let FormattedMinutes = String(Minutes).padStart(2, '0')
         let FormattedSeconds = String(Seconds).padStart(2, '0')
-
         return `${FormattedMinutes}:${FormattedSeconds}`
     }
 }
@@ -29,7 +28,7 @@ async function getSongs(folder) {
 
     for (let index = 0; index < links.length; index++) {
         const element = links[index];
-        if (element.href.endsWith(".mp3")) {
+        if (element.href.endsWith(".m4a")) {
             songs.push(element.href.split(`/${folder}/`)[1])
         }
     }
@@ -62,15 +61,9 @@ async function getSongs(folder) {
 
 // play the music when the user on the icon
 const playmusic = (track, pause = false) => {
-    // This is by own
-    // currentSong.src = `${currFolder}` + track
-    // End
-    // This is by chatGPT
     // console.log(`Current Folder: ${currFolder}`);
     // console.log(`Track: ${track}`);
     currentSong.src = `http://127.0.0.1:3000/${currFolder}/${track}`;
-    // End
-
 
     if (!pause) {
         currentSong.play()
@@ -90,7 +83,6 @@ async function displayAlbums() {
     let anchors = div.getElementsByTagName("a")
 
     let cardContainer = document.querySelector(".cardContainer")
-    // Array.from(anchors).forEach(async (e) => {
     let array = Array.from(anchors)
     for (let index = 0; index < array.length; index++) {
         const e = array[index];
@@ -112,7 +104,7 @@ async function displayAlbums() {
             //     </path>
             //     </svg>
             //     </div>
-            //     <img src="/songs/${folder}/Cover-Img-Quran-Surah's.jpg">
+            //     <img src="/songs/${folder}/Cover-Page.jpg">
 
             //     <h3>${response.title}</h3>
             //     <p>${response.description}</p>
@@ -122,9 +114,7 @@ async function displayAlbums() {
     }
     // Add an  eventlstener to load the playlist  when the card was clicked by the user
     Array.from(document.getElementsByClassName("cards")).forEach((e) => {
-        // console.log(e);
         e.addEventListener("click", async (item) => {
-            // console.log(item, item.currentTarget.dataset);
             songs = await getSongs(`songs/${item, item.currentTarget.dataset.folder}`)
 
         })
@@ -139,8 +129,7 @@ async function main() {
     // Add an eventlistener for showcasing all the albums to the user
     displayAlbums()
 
-    // Attach an event listener for play the music previous the music and get next music
-    // pasued the music and play the music
+    // Attach an event listener for play the music 
     Play.addEventListener("click", () => {
         if (currentSong.paused) {
             currentSong.play()
