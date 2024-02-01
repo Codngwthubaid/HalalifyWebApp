@@ -18,7 +18,7 @@ function SecondsToMinuteSeconds(seconds) {
 
 async function getSongs(folder) {
     currFolder = folder;
-    let localAPI = await fetch(`http://127.0.0.1:3000/${folder}/`)
+    let localAPI = await fetch(`../${folder}/`)
     let response = await localAPI.text()
     let div = document.createElement("div")
     div.innerHTML = response
@@ -58,11 +58,11 @@ async function getSongs(folder) {
 
 }
 
-getSongs()
+getSongs("songs/Nasheeds")
 
 // play the music when the user on the icon
 const playmusic = (track, pause = false) => {
-    currentSong.src = `http://127.0.0.1:3000/${currFolder}/${track}`;
+    currentSong.src = `../${currFolder}/${track}`;
 
     if (!pause) {
         currentSong.play()
@@ -75,7 +75,7 @@ const playmusic = (track, pause = false) => {
 }
 
 async function displayAlbums() {
-    let localAPI = await fetch(`http://127.0.0.1:3000/songs/`)
+    let localAPI = await fetch(`../Songs/`)
     let response = await localAPI.text()
     let div = document.createElement("div")
     div.innerHTML = response;
@@ -89,7 +89,7 @@ async function displayAlbums() {
 
         if (e.href.includes("/songs")) {
             let folder = e.href.split('/').slice(-2)[0]
-            let localAPI = await fetch(`http://127.0.0.1:3000/songs/${folder}/info.json`)
+            let localAPI = await fetch(`../songs/${folder}/info.json`)
             let response = await localAPI.json()
             // console.log(response);
 
@@ -113,7 +113,7 @@ async function displayAlbums() {
     // Add an  eventlstener to load the playlist  when the card was clicked by the user
     Array.from(document.getElementsByClassName("cards")).forEach((e) => {
         e.addEventListener("click", async (item) => {
-            await getSongs(`songs/${item, item.currentTarget.dataset.folder}`)
+            await getSongs(`Songs/${item, item.currentTarget.dataset.folder}`)
             playmusic(songs[0])
 
         })
