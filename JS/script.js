@@ -136,7 +136,7 @@ async function main() {
         }
         else {
             currentSong.pause()
-            Play.src = "Svg's/Play.svg"
+            Play.src = "Svg's/play.svg"
         }
     })
 
@@ -195,7 +195,6 @@ async function main() {
 
     // Add an event listener for mute the volume 
     document.querySelector(".rangeVolume > img").addEventListener("click", (e) => {
-        // console.log(e.target);
         if (e.target.src.includes("Svg's/volume.svg")) {
             e.target.src = e.target.src.replace("Svg's/volume.svg", "Svg's/mute.svg")
             currentSong.volume = 0
