@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Halalify Web App
 <h1>The Repository describes about the Halalify Web App Project Code.</h1> 
 <br>
@@ -15,3 +16,7 @@ Another notable feature of Halalify's Web Player is the ability to create and ma
 <br>
 <br>
 Overall, Halalify Web Player aims to provide a platform that solely focuses on Quran surahs and nasheeds, catering to the needs of individuals seeking a halal and spiritually enriching listening experience. With its intuitive interface and convenient features such as simple playback controls, playlist creation, and song information in English, it enhances the users' engagement and enjoyment while adhering to Islamic principles.
+=======
+
+
+>>>>>>> 04a35acac3f89d72148aa6a6bf0f7b3b34f6cd86
