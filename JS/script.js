@@ -46,7 +46,6 @@ async function getSongs(folder) {
                                              <img src="Svg's/play.svg" alt="play-Img"></div>
                                              </li>`
     }
-
     // Attact an eventlistner to each song
     Array.from(document.querySelector(".songs").getElementsByTagName("li")).forEach((e) => {
         e.addEventListener("click", element => {
@@ -58,6 +57,8 @@ async function getSongs(folder) {
     })
 
 }
+
+getSongs()
 
 // play the music when the user on the icon
 const playmusic = (track, pause = false) => {
@@ -113,7 +114,7 @@ async function displayAlbums() {
     Array.from(document.getElementsByClassName("cards")).forEach((e) => {
         e.addEventListener("click", async (item) => {
             await getSongs(`songs/${item, item.currentTarget.dataset.folder}`)
-
+            playmusic(songs[0])
 
         })
     })
