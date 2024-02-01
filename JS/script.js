@@ -18,7 +18,7 @@ function SecondsToMinuteSeconds(seconds) {
 
 async function getSongs(folder) {
     currFolder = folder;
-    let localAPI = await fetch(`http://127.0.0.1:3000/${folder}/`)
+    let localAPI = await fetch(`/${folder}/`)
     let response = await localAPI.text()
     let div = document.createElement("div")
     div.innerHTML = response
@@ -62,7 +62,7 @@ getSongs()
 
 // play the music when the user on the icon
 const playmusic = (track, pause = false) => {
-    currentSong.src = `http://127.0.0.1:3000/${currFolder}/${track}`;
+    currentSong.src = `/${currFolder}/` + track;
 
     if (!pause) {
         currentSong.play()
