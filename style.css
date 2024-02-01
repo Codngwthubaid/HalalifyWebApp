@@ -199,9 +199,9 @@ body {
 }
 
 
-.nav{
-padding: 0px 0px 0px 10px;
-column-gap: 15px;
+.nav {
+    padding: 0px 0px 0px 10px;
+    column-gap: 15px;
 }
 
 .signInBtn {
@@ -491,7 +491,7 @@ column-gap: 15px;
     }
 
     .spotifyPlaylist .cards {
-        width: 80vw;
+        width: 65vw;
         height: auto;
         padding: 10px;
         border-radius: 8px;
@@ -528,7 +528,7 @@ column-gap: 15px;
         gap: 15px;
         margin: 10px 0px;
         overflow-y: auto;
-        height: auto;
+        max-height: 49vh;
     }
 
     .playButton {
@@ -569,7 +569,7 @@ column-gap: 15px;
     }
 
 
-    
+
     .nav {
         column-gap: 20px;
     }
@@ -826,6 +826,7 @@ column-gap: 15px;
     .cardContainer {
         justify-content: flex-start;
         align-items: center;
+        max-height: 61vh;
 
     }
 
@@ -938,7 +939,7 @@ column-gap: 15px;
     .cardContainer {
         justify-content: flex-start;
         align-items: center;
-
+        max-height: 60vh;
     }
 
     .circle {
