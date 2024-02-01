@@ -201,6 +201,7 @@ body {
 
 .nav{
 padding: 0px 0px 0px 10px;
+column-gap: 15px;
 }
 
 .signInBtn {
@@ -241,12 +242,8 @@ padding: 0px 0px 0px 10px;
 .playBar {
     position: fixed;
     bottom: 0;
-    /* margin-bottom: 10px; */
-    /* background-color: #dbdbdb; */
-    /* background-color: #999393; */
     background-color: white;
     width: 70%;
-    /* height: 30px; */
     border-radius: 5px;
     padding: 20px 0px 0px 0px;
 }

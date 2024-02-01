@@ -1,5 +1,5 @@
 console.log('Ready');
-let currentSong = new Audio;   //global variable for music 
+let currentSong = new Audio;
 let songs;
 let currFolder;
 
@@ -61,8 +61,6 @@ async function getSongs(folder) {
 
 // play the music when the user on the icon
 const playmusic = (track, pause = false) => {
-    // console.log(`Current Folder: ${currFolder}`);
-    // console.log(`Track: ${track}`);
     currentSong.src = `http://127.0.0.1:3000/${currFolder}/${track}`;
 
     if (!pause) {
@@ -94,28 +92,28 @@ async function displayAlbums() {
             let response = await localAPI.json()
             // console.log(response);
 
-            // cardContainer.innerHTML +=
-            //     `<div data-folder="surahs" class="cards">
-            //     <div class="playButton flex justify-content ">
-            //     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="35" viewBox="0 0 24 24"
-            //     id="play">
-            //     <path
-            //     d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18c.62-.39.62-1.29 0-1.69L9.54 5.98C8.87 5.55     8 6.03 8 6.82z">
-            //     </path>
-            //     </svg>
-            //     </div>
-            //     <img src="/songs/${folder}/Cover-Page.jpg">
-
-            //     <h3>${response.title}</h3>
-            //     <p>${response.description}</p>
-            // </div>`
+            cardContainer.innerHTML +=
+                `<div data-folder="${folder}" class="cards">
+                <div class="playButton flex justify-content ">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="35" viewBox="0 0 24 24"
+                id="play">
+                <path
+                d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18c.62-.39.62-1.29 0-1.69L9.54 5.98C8.87 5.55     8 6.03 8 6.82z">
+                </path>
+                </svg>
+                </div>
+                <img src="/songs/${folder}/Cover-Page.jpg">
+                <h3>${response.title}</h3>
+                <p>${response.description}</p>
+            </div>`
 
         }
     }
     // Add an  eventlstener to load the playlist  when the card was clicked by the user
     Array.from(document.getElementsByClassName("cards")).forEach((e) => {
         e.addEventListener("click", async (item) => {
-            songs = await getSongs(`songs/${item, item.currentTarget.dataset.folder}`)
+            await getSongs(`songs/${item, item.currentTarget.dataset.folder}`)
+
 
         })
     })
