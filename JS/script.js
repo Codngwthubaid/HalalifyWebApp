@@ -1,4 +1,3 @@
-// console.log('Ready');
 let currentSong = new Audio;
 let songs;
 let currFolder;
