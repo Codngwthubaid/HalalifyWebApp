@@ -33,7 +33,6 @@ async function main() {
 
     // list of all the songs
     let songs = await getSongs()
-    // console.log(songs);
 
     // Show all the songs in the playlist
     let songUL = document.querySelector(".songList").getElementsByTagName("ul")[0]
