@@ -116,7 +116,8 @@ async function main() {
     })
 
     // Display all albums in the Webpage
-    displayAlbums()
+    let dispaly = await displayAlbums()
+    console.log(dispaly);
 
 
     // Function of time changing during playing the music by addeventlistener
