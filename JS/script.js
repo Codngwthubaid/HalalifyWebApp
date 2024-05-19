@@ -110,6 +110,8 @@ async function displayAlbums() {
             playMusic(songs[0])
         })
     })
+
+    return displayAlbums()
 }
 
 async function main() {
@@ -129,7 +131,8 @@ async function main() {
     })
 
     // Display all albums in the Webpage
-    displayAlbums()
+    let display = await displayAlbums()
+    console.log(display);
 
 
     // Function of time changing during playing the music by addeventlistener
