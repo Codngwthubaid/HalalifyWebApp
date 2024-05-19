@@ -111,7 +111,6 @@ async function displayAlbums() {
         })
     })
 
-    return displayAlbums()
 }
 
 async function main() {
@@ -131,8 +130,7 @@ async function main() {
     })
 
     // Display all albums in the Webpage
-    let display = await displayAlbums()
-    console.log(display);
+    displayAlbums()
 
 
     // Function of time changing during playing the music by addeventlistener
@@ -182,12 +180,12 @@ async function main() {
     document.querySelector(".volImg").addEventListener("click", (e => {
         console.log(e.target);
         if (e.target.src.includes("volume.svg")) {
-            e.target.src = e.target.src.replace("volume.svg","mute.svg")
+            e.target.src = e.target.src.replace("volume.svg", "mute.svg")
             currentSong.volume = 0
             document.querySelector(".range").getElementsByTagName("input")[0].value = 0
         }
         else {
-            e.target.src = e.target.src.replace("mute.svg","volume.svg")
+            e.target.src = e.target.src.replace("mute.svg", "volume.svg")
             currentSong.volume = 0.1
             document.querySelector(".range").getElementsByTagName("input")[0].value = 10
         }
