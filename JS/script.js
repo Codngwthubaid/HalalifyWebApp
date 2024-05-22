@@ -39,7 +39,7 @@ async function newFolder() {
                 </path>
             </svg>
         </div>
-        <img class="rounded" src=""
+        <img class="rounded" src=${album.url}
             alt="">
         <h3>${album.title}</h3>
         <p>${album.desc}</p>
