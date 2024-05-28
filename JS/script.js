@@ -16,38 +16,38 @@ function convertSecondsToMinutesAndSeconds(totalSeconds) {
     return `${FormattedMinutes} : ${FormattedSeconds}`;
 }
 
-async function newFolder() {
-    let albums_list = await fetch(`http://127.0.0.1:3000/json/albums.json/`)
-        .then(response => response.json())
+// async function newFolder() {
+//     let albums_list = await fetch(`http://127.0.0.1:3000/json/albums.json/`)
+//         .then(response => response.json())
 
 
-    let Container = document.querySelector(".cardsContainer")
-    Container.innerHTML = ""
-    for (const album of albums_list) {
-        const albumNode = document.createElement("div")
+//     let Container = document.querySelector(".cardsContainer")
+//     Container.innerHTML = ""
+//     for (const album of albums_list) {
+//         const albumNode = document.createElement("div")
 
-        albumNode.addEventListener("click",()=>{
-            alert(album.title)
-        })
+//         albumNode.addEventListener("click",()=>{
+//             alert(album.title)
+//         })
 
-        albumNode.innerHTML = `<div class="cards rounded">
-        <div class="play">
-            <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 24 24"
-                class="Svg-sc-ytk21e-0 bneLcE">
-                <path
-                    d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z">
-                </path>
-            </svg>
-        </div>
-        <img class="rounded" src=${album.url}
-            alt="">
-        <h3>${album.title}</h3>
-        <p>${album.desc}</p>
-    </div>`
+//         albumNode.innerHTML = `<div class="cards rounded">
+//         <div class="play">
+//             <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 24 24"
+//                 class="Svg-sc-ytk21e-0 bneLcE">
+//                 <path
+//                     d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z">
+//                 </path>
+//             </svg>
+//         </div>
+//         <img class="rounded" src=${album.url}
+//             alt="">
+//         <h3>${album.title}</h3>
+//         <p>${album.desc}</p>
+//     </div>`
 
-        Container.appendChild(albumNode)
-    }
-}
+//         Container.appendChild(albumNode)
+//     }
+// }
 
 
 
@@ -55,7 +55,6 @@ async function getSongs(folder) {
     CurrentFolder = folder
     let a = await fetch(`http://127.0.0.1:3000/${folder}/`)
     let response = await a.text()
-    console.log(response);
     let div = document.createElement("div")
     div.innerHTML = response
     let as = div.getElementsByTagName("a")
@@ -107,10 +106,10 @@ const playMusic = (music, pause = false) => {
 
 async function displayAlbums() {
     let a = await fetch(`http://127.0.0.1:3000/Songs/`)
-    console.log(a);
     let response = await a.text()
     let div = document.createElement("div")
     div.innerHTML = response
+    console.log(div)
     let allas = document.getElementsByTagName("a")
     let array = Array.from(allas)
     console.log(allas);
@@ -125,21 +124,21 @@ async function displayAlbums() {
             let a = await fetch(`http://127.0.0.1:3000/Songs/${folder}/info.json`)
             let response = await a.json()
             console.log(response);
-            // let Container = document.querySelector(".cardsContainer")
-            //     Container.innerHTML = Container.innerHTML + ` <div  data-Folder="${folder}"  class="cards rounded">
-            //     <div class="play">
-            //         <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 24 24"
-            //             class="Svg-sc-ytk21e-0 bneLcE">
-            //             <path
-            //                 d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z">
-            //             </path>
-            //         </svg>
-            //     </div>
-            //     <img class="rounded" src="/Songs/${folder}/CoverPage.jpg"
-            //         alt="">
-            //     <h3>${response.title}</h3>
-            //     <p>${response.desc}</p>
-            // </div>`
+            let Container = document.querySelector(".cardsContainer")
+                Container.innerHTML = Container.innerHTML + ` <div  data-Folder="${folder}"  class="cards rounded">
+                <div class="play">
+                    <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 24 24"
+                        class="Svg-sc-ytk21e-0 bneLcE">
+                        <path
+                            d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z">
+                        </path>
+                    </svg>
+                </div>
+                <img class="rounded" src="/Songs/${folder}/CoverPage.jpg"
+                    alt="">
+                <h3>${response.title}</h3>
+                <p>${response.desc}</p>
+            </div>`
         }
     }
 
@@ -172,8 +171,8 @@ async function main() {
     })
 
     // Display all albums in the Webpage
-    // displayAlbums()
-    newFolder()
+    displayAlbums()
+    // newFolder()
 
 
     // Function of time changing during playing the music by addeventlistener
