@@ -154,8 +154,8 @@ async function main() {
     })
 
     // Display all albums in the Webpage
-    // displayAlbums()
-    newFolder()
+    displayAlbums()
+    // newFolder()
 
 
     // loading playlist
